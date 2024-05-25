@@ -1,6 +1,7 @@
 import FavoriteMovieIdb from '../src/scripts/data/favorite-movie-idb.js';
 import * as TestFactories from './testFactories.js';
 
+// mendefinisikan test
 describe('Liking A Movie', () => {
     const addLikeButtonContainer = () => {
         document.body.innerHTML = '<div id="likeButtonContainer"></div>';
@@ -10,9 +11,11 @@ describe('Liking A Movie', () => {
         addLikeButtonContainer();
     });
 
+    // sekenario test
     it('should show the like button when the movie has not been liked before', async() => {
         await TestFactories.createLikeButtonPresenterWithMovie({ id: 1 });
 
+        // mengecek hasil test
         expect(document.querySelector('[aria-label="like this movie"]')).toBeTruthy();
     });
 
